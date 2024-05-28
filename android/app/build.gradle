@@ -69,6 +69,8 @@ def enableProguardInReleaseBuilds = false
  */
 def jscFlavor = 'org.webkit:android-jsc:+'
 
+
+
 android {
     ndkVersion rootProject.ext.ndkVersion
     buildToolsVersion rootProject.ext.buildToolsVersion
@@ -83,6 +85,7 @@ android {
         versionName "1.0"
     }
     signingConfigs {
+
         debug {
             storeFile file('debug.keystore')
             storePassword 'android'
@@ -91,10 +94,11 @@ android {
         }
     }
     buildTypes {
+
         debug {
             signingConfig signingConfigs.debug
         }
-        release {
+                release {
             // Caution! In production, you need to generate your own keystore file.
             // see https://reactnative.dev/docs/signed-apk-android.
             signingConfig signingConfigs.debug
