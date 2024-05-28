@@ -56,7 +56,7 @@ const App = () => {
 
   return (
     <View style={styles.container}>
-      <Clock hourHandColor="white"></Clock>
+      <Clock secondHandColor="red"></Clock>
       <Text style={styles.text}>현재 소음: {noiseLevel}dB</Text>
       <Button title="시작" onPress={startListening} disabled={isRunning} />
       <Button title="종료" onPress={stopListening} disabled={!isRunning} />

@@ -12,7 +12,7 @@ export default class Clock extends Component {
       sec: d.getSeconds() * 6,
       min: d.getMinutes() * 6 + (d.getSeconds() * 6) / 60,
       hour:
-        ((d.getHours() % 12) / 12) * 360 +
+        (((d.getHours() - 3) % 12) / 12) * 360 +
         90 +
         (d.getMinutes() * 6 + (d.getSeconds() * 6) / 60) / 12,
     };
@@ -25,7 +25,7 @@ export default class Clock extends Component {
       this.setState({min: d.getMinutes() * 6 + (d.getSeconds() * 6) / 60});
       this.setState({
         hour:
-          ((d.getHours() % 12) / 12) * 360 +
+          (((d.getHours() - 3) % 12) / 12) * 360 +
           90 +
           (d.getMinutes() * 6 + (d.getSeconds() * 6) / 60) / 12,
       });
@@ -207,22 +207,22 @@ export default class Clock extends Component {
 Clock.defaultProps = {
   backgroundImage: '../assets/image/clockBack2.png',
   clockSize: 270,
-  clockBorderWidth: 7,
+  clockBorderWidth: 5,
   clockCentreSize: 9,
   clockCentreColor: 'white',
   hourHandColor: 'white',
   hourHandCurved: true,
   hourHandLength: 70,
-  hourHandWidth: 5.5,
+  hourHandWidth: 2,
   hourHandOffset: 0,
   minuteHandColor: 'white',
   minuteHandCurved: true,
   minuteHandLength: 100,
-  minuteHandWidth: 5,
+  minuteHandWidth: 1,
   minuteHandOffset: 0,
-  secondHandColor: 'red',
+  secondHandColor: 'black',
   secondHandCurved: false,
   secondHandLength: 120,
-  secondHandWidth: 2,
+  secondHandWidth: 1,
   secondHandOffset: 0,
 };
