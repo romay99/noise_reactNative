@@ -12,7 +12,7 @@ export default class Clock extends Component {
       sec: d.getSeconds() * 6,
       min: d.getMinutes() * 6 + (d.getSeconds() * 6) / 60,
       hour:
-        (((d.getHours() - 3) % 12) / 12) * 360 +
+        ((d.getHours() % 12) / 12) * 360 +
         90 +
         (d.getMinutes() * 6 + (d.getSeconds() * 6) / 60) / 12,
     };
@@ -25,7 +25,7 @@ export default class Clock extends Component {
       this.setState({min: d.getMinutes() * 6 + (d.getSeconds() * 6) / 60});
       this.setState({
         hour:
-          (((d.getHours() - 3) % 12) / 12) * 360 +
+          ((d.getHours() % 12) / 12) * 360 +
           90 +
           (d.getMinutes() * 6 + (d.getSeconds() * 6) / 60) / 12,
       });
